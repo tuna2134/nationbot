@@ -20,5 +20,17 @@ async def start(ctx):
   subprocess.run(f"C:\Users\ {username}\Desktop\NATiON\bedrock-server-1.17.11.01", shell=True)
   e=discord.Embed(title="NATION-SERVER-SYSTEM", description="起動しました")
   await m.edit(e=embed)
+ 
+# shell command実行
+@bot.listen(name="on_message")
+async def shell(message):
+  if not message.channel.id == 878987174769471518:
+    return
+  if str(message.author.id) in admin:
+    returncode = subprocess.Popen(cmd, shell=True)
+    await message.channel.send(returncode)
+  else:
+    await message.channel.send("権限が足りません")
   
+        
 bot.run(TOKEN)

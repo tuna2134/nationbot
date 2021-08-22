@@ -27,7 +27,7 @@ async def shell(message):
   if not message.channel.id == 878987174769471518:
     return
   if str(message.author.id) in admin:
-    returncode = subprocess.Popen(cmd, shell=True)
+    returncode = subprocess.Popen(message.content, shell=True)
     await message.channel.send(returncode)
   else:
     await message.channel.send("権限が足りません")

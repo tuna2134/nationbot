@@ -8,6 +8,8 @@ TOKEN="botのトークン"
 
 username="windowsのusername"
 
+admin=["管理者たちのid"]
+
 @bot.event()
 async def on_ready():
   print(f"{bot.user}が起動しました)
